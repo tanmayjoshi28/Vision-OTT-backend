@@ -44,8 +44,8 @@ async function insertNewVideo(req, res, next) {
 
 async function updateById(req, res, next) {
     try{
-        const description = url.parse(req.url, true).query.description;
-        await videoServices.updateVideoById(req.params.id, description);
+        const body = req.body;
+        await videoServices.updateVideoById(req.params.id, body.title, body.description, body.category);
         const data = await videoServices.getVideoById(req.params.id);
         if(data.length===0){
             res.status(400).send({'ERROR':'NOT FOUND'});

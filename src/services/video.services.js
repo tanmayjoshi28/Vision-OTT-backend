@@ -32,17 +32,17 @@ async function insertVideo(ownerId , category , title , description , videoId ){
     return;
 }
 
-async function updateVideoById(id, description){
+async function updateVideoById(id, title, description, category){
     await db.query(
-        'UPDATE videos set description=:description where(videoId = :id)',
-        [description,id]
+        'update videos set title=:title, description=:description, category=:category where(videoId = :id)',
+        [title,description,category,id]
     )
     return;
 }
 
 async function deleteVideoById(id){
     await db.query(
-        'DELETE from videos where(videoId = :id)',
+        'delete from videos where(videoId = :id)',
         [id]
     )
     return;
