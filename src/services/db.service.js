@@ -1,7 +1,8 @@
 const oracledb = require("oracledb");
+//FOR ORACLE EXPRESS 11
 const dbConfig = {
-	user: "ADMIN",
-	password: "password",
+	user: "----",
+	password: "----",
 	connectString: "localhost:1521/xe",
 };
 oracledb.autoCommit = true;
