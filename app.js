@@ -1,6 +1,6 @@
 const express = require("express");
 const videoRoutes = require('./src/routes/videos.route');
-
+const bookmarkRoutes = require('./src/routes/bookmark.route');
 var bodyParser = require('body-parser');
 
 const app = express();
@@ -20,6 +20,8 @@ app.use(function (request, response, next) {
 });
 
 app.use('/videoContent', videoRoutes);
+app.use('/bookmark', bookmarkRoutes);
+
 app.listen(port, () => console.log(`Server listening on port ${port}`))
 
 
