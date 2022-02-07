@@ -22,4 +22,5 @@ create table bookmark(
     FOREIGN KEY (videoId) REFERENCES videos(videoId)
 );
 
--- insert into videos values (1 ,'OTHERS', 'Test 2' , 'Description 2' , 'MiQWCh0ahV4');
+insert into videos values (1 ,'OTHERS', 'Test 2' , 'Description 2' , 'MiQWCh0ahV4');
+insert into bookmark values(-1, 'gcBbzH8Vm2k');
