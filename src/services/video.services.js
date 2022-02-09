@@ -42,9 +42,14 @@ async function updateVideoById(id, title, description, category){
 
 async function deleteVideoById(id){
     await db.query(
+        'delete from bookmark where(videoId = :id)',
+        [id]
+    )
+    await db.query(
         'delete from videos where(videoId = :id)',
         [id]
     )
+    
     return;
 }
 module.exports = {
