@@ -1,7 +1,7 @@
 create table users(
     id number PRIMARY KEY,
     username varchar2(500),
-    email varchar2(500),
+    email varchar2(500) UNIQUE,
     dob Date,
     password varchar2(500)
 );
@@ -21,6 +21,3 @@ create table bookmark(
     FOREIGN KEY (userId) REFERENCES users(id),
     FOREIGN KEY (videoId) REFERENCES videos(videoId)
 );
-
-insert into videos values (1 ,'OTHERS', 'Test 2' , 'Description 2' , 'MiQWCh0ahV4');
-insert into bookmark values(-1, 'gcBbzH8Vm2k');
